@@ -1,12 +1,19 @@
 {
-    "name": "Getting Started Example",
-    "description": "Build an Extension!",
+    "name": "Find Korean in Youtube Comments",
+    "description": "If you cannot find Korean in Youtube Comments, Use this!",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
     },
-    "permissions": ["storage", "activeTab", "declarativeContent", "scripting"],
+    "permissions": ["storage", 
+        "activeTab", 
+        "declarativeContent", 
+        "scripting",
+        "https://*.youtube.com/",
+        "identity",
+        "identity.email"
+    ],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
