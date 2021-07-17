@@ -11,8 +11,6 @@
         "declarativeContent", 
         "scripting",
         "https://*.youtube.com/",
-        "identity",
-        "identity.email"
     ],
     "action": {
         "default_popup": "popup.html",
