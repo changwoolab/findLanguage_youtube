@@ -3,23 +3,11 @@
 
 <head>
   <link rel="stylesheet" href="button.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
+  <script src="./forapis/jquery.js"></script>
+  <script src="./forapis/youtubeapi.js"></script>
 </head>
 
 <body>
-  <script>
-    $.ajax({
-      method: 'GET',
-      url: "https://www.googleapis.com/youtube/v3/activities?key=APIKEY",
-      data: { part: 'snippet'}
-    })
-      .done(function (data) {
-        if (console && console.log) {
-          console.log("Sample of data:", data.slice(0, 100));
-        }
-      });
-  </script>
   <h3 class="align-center">Find Your Language on Youtube!</h3>
   <div class="align-center"><input type="button" id="findKoreaninComment" value="Activate!"></button></div>
   <h4 class="align-center">Give us Feedback</h4>
