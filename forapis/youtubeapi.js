@@ -40,6 +40,7 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
                 // youtube html을 변형하여 보여주기
                 // div를 삭제하고 재구성하기보다는 기존 댓글들 위에 추가해주자.
                 console.log("한글");
+                
               }
             }
           }
