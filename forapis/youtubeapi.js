@@ -1,5 +1,16 @@
 const apiKey = "";
 
+
+// popup.js에 한국어 댓글들을 보여줌.
+function addElement(num, charact) {
+  var newNode = document.createElement("div");
+  var parentDiv = document.getElementById("childElement").parentNode;
+  var newContent = document.createTextNode(`${num+1}. `+charact);
+  newNode.appendChild(newContent);
+  var sp = document.getElementById("childElement");
+  parentDiv.insertBefore(newNode, sp);
+}
+
 // charCodeAt()을 제대로 활용하기 위해서는 html파일 맨 위에
 // <meta>를 이용해서 utf-16을 사용함을 명시해야 한다. 
 function checkIfKorean(c) {
@@ -37,10 +48,8 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
               console.log(ch);
               // 만약 받아온 comment가 한국어라면,
               if (checkIfKorean(ch)) {
-                // youtube html을 변형하여 보여주기
-                // div를 삭제하고 재구성하기보다는 기존 댓글들 위에 추가해주자.
-                console.log("한글");
-                
+                // popup.html 파일을 수정하여 보여주기
+                addElement(i, ch);
               }
             }
           }

@@ -1,8 +1,8 @@
 body {
-    height: 300px;
-    width: 200px;
-    position: relative;
+    height:auto;
+    width: 400px;
     vertical-align:middle;
+    position: relative;
 }
 .align-center {
     text-align:center;
