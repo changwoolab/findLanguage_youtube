@@ -1,6 +1,40 @@
+// google API KEY
+// YOUTUBE API를 허용하세요
 const apiKey = "";
 
-
+function addElement(objectData) {
+  let authorChannelUrl = objectData.authorChannelUrl;
+  let authorDisplayName = objectData.authorDisplayName;
+  let authorProfileImageUrl = objectData.authorProfileImageUrl;
+  let textDisplay = objectData.textOriginal;
+  let likeCount = objectData.likeCount;
+  $("#parentElement").append(`
+  <div id="contents" class="box-container">
+        <div id="thumbnail">
+            <a href="${authorChannelUrl}"><img class="thumbnail-image"
+            src="${authorProfileImageUrl}" 
+            alt="not loaded" height="40" width="40"></a>
+        </div>
+        <div id="comments" class="comments-container">
+            <div id="header">
+                <div class="header-author">
+                    <h3 class="author-name">${authorDisplayName}</h3>
+                    <div class="time-written">2개월 전(수정됨)</div>
+                </div>
+            </div>
+            <div id="expander">
+                <div>${textDisplay}</div>
+            </div>
+            <div id="actions">
+                <img src="img/good.jpg" height="15" width="15">
+                <div class="betweengoodbad">${likeCount}</div>
+                <img src="img/bad.jpg" height="15" width="15"></a>
+            </div>
+        </div>
+    </div>
+  `)
+}
+/*
 // popup.js에 한국어 댓글들을 보여줌.
 function addElement(num, charact) {
   var newNode = document.createElement("div");
@@ -10,7 +44,7 @@ function addElement(num, charact) {
   var sp = document.getElementById("childElement");
   parentDiv.insertBefore(newNode, sp);
 }
-
+*/
 // charCodeAt()을 제대로 활용하기 위해서는 html파일 맨 위에
 // <meta>를 이용해서 utf-16을 사용함을 명시해야 한다. 
 function checkIfKorean(c) {
@@ -45,11 +79,11 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
             console.log(data);
             for (i = 0; i < data.items.length; i++) {
               let ch = data.items[i].snippet.topLevelComment.snippet.textOriginal;
-              console.log(ch);
               // 만약 받아온 comment가 한국어라면,
               if (checkIfKorean(ch)) {
                 // popup.html 파일을 수정하여 보여주기
-                addElement(i, ch);
+                let obData = data.items[i].snippet.topLevelComment.snippet;
+                addElement(obData);
               }
             }
           }

@@ -1,0 +1,59 @@
+.box-container {
+    display:flex;
+    flex-grow: 1;
+}
+.thumbnail-image {
+    border-radius: 50%;
+    margin-right:6px;
+}
+.comments-container {
+    display:flex;
+    flex-wrap:wrap;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.header-author {
+    display:flex;
+    flex-wrap:wrap;
+    flex-grow: 1;
+    height: 20px;
+}
+.author-name {
+    margin-top: 0px;
+    font-size:small;
+    margin-right: 5px;
+}
+.time-written {
+    font-size: small;
+}
+#expander {
+    font-size: small;
+    margin-bottom: 5px;
+}
+#actions {
+    display: flex;
+}
+.betweengoodbad{
+    font-size: smaller;
+    margin-left: 8px;
+    margin-right: 12px;
+}
+body {
+    height:auto;
+    width: 400px;
+    vertical-align:middle;
+    position: relative;
+}
+.align-center {
+    text-align:center;
+}
+
+#title {
+    text-align: center;
+}
+#feedback {
+    margin-bottom: 10px;
+}
+.givefeedback {
+    margin-bottom: 3px;
+}
