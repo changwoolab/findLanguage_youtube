@@ -1,6 +1,7 @@
 .box-container {
     display:flex;
     flex-grow: 1;
+    margin-top: 5px;
 }
 .thumbnail-image {
     border-radius: 50%;
@@ -53,7 +54,10 @@ body {
 }
 #feedback {
     margin-bottom: 10px;
+    color: black;
+    font-size: small;
 }
+
 .givefeedback {
     margin-bottom: 3px;
 }
